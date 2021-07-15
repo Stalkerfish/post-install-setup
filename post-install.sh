@@ -2,39 +2,34 @@
 # ----------------------------- VARIÁVEIS ----------------------------- #
 PPA_LUTRIS="ppa:lutris-team/lutris"
 PPA_ULAUNCHER="ppa:agornostal/ulauncher"
-PPA_APPIMAGELAUNCHER="ppa:appimagelauncher-team/stable"
 
 
-URL_PPA_VIPER4LINUX="https://thepbone.github.io/PPA-Repository/thepbone_ppa.list"
 URL_WINE_KEY="https://dl.winehq.org/wine-builds/winehq.key"
 URL_PPA_WINE="https://dl.winehq.org/wine-builds/ubuntu/"
 URL_4K_VIDEO_DOWNLOADER="https://dl.4kdownload.com/app/4kvideodownloader_4.9.2-1_amd64.deb"
 URL_GITHUB_DESKTOP="https://github.com/shiftkey/desktop/releases/download/release-2.9.0-linux3/GitHubDesktop-linux-2.9.0-linux3.deb"
 URL_WEB_TORRENT_DESKTOP="https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_amd64.deb"
-URL_VIPER4LINUX_KEY="https://thepbone.github.io/PPA-Repository/KEY.gpg"
+URL_APPIMAGELAUNCHER="https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb"
+URL_YOUTUBE_MUSIC="https://github.com/th-ch/youtube-music/releases/download/v1.12.1/youtube-music_1.12.1_amd64.deb"
 
 
-DIRETORIO_DOWNLOADS="$HOME/Downloads/pacotes\ deb"
+DIRETORIO_DOWNLOADS="$HOME/Downloads/pacotes deb"
 
 PROGRAMAS_PARA_INSTALAR=(
   arduino
-  gnome-tweaks
-  youtube-music
+  gnome-tweak-tool
   simulide
-  viper4linux-gui
-  gnome-extensions
+  extensions
   dconf-editor
   grub-customizer
   gnome-clocks
   gnome-weather
-  notable
   plank
   gimp
   qbittorrent
   vlc
   telegram-desktop
   ulauncher
-  appimagelauncher
   pavucontrol
   virtualbox
   steam-installer
@@ -68,8 +63,7 @@ sudo apt update -y
 
 ## Adicionando repositórios de terceiros (Lutris, Wine e Viper)##
 sudo add-apt-repository "$PPA_LUTRIS" -y
-curl -s compressed "$URL_VIPER4LINUX_KEY | sudo apt-key add -"
-sudo curl -s --compressed -o /etc/apt/sources.list.d/thepbone_ppa.list "$URL_PPA_VIPER4LINUX"
+sudo add-apt-repository "$PPA_ULAUNCHER" -y
 wget -nc "$URL_WINE_KEY"
 sudo apt-key add winehq.key
 sudo apt-add-repository "deb $URL_PPA_WINE focal main"
@@ -84,6 +78,7 @@ mkdir "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_GITHUB_DESKTOP"       -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_WEB_TORRENT_DESKTOP"  -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_4K_VIDEO_DOWNLOADER"  -P "$DIRETORIO_DOWNLOADS"
+wget -c "$URL_APPIMAGELAUNCHER"     -P "$DIRETORIO_DOWNLOADS"
 
 ## Instalando pacotes .deb baixados na sessão anterior ##
 sudo dpkg -i $DIRETORIO_DOWNLOADS/*.deb
@@ -105,7 +100,7 @@ flatpak install flathub com.rafaelmardojai.Blanket -y
 ## Instalando pacotes Snap ##
 sudo snap install discord
 sudo snap install whatsapp-for-linux
-sudo snap install code
+sudo snap install code --classic
 
 # ---------------------------------------------------------------------- #
 
