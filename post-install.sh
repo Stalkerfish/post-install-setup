@@ -18,6 +18,7 @@ DIRETORIO_DOWNLOADS="$HOME/Downloads/pacotes deb"
 PROGRAMAS_PARA_INSTALAR=(
   arduino
   gnome-tweak-tool
+  flatpak
   simulide
   extensions
   dconf-editor
