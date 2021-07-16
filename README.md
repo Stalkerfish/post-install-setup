@@ -16,4 +16,4 @@ The few things you need to do is run in your terminal the following:
 
 - if you want to install Viper4Linux to make amazing audio tweaks, just run:
 
-`installViper.sh`
+`./installViper.sh`
