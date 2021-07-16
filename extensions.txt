@@ -6,3 +6,4 @@ GSConnect
 Sound Input & Output Device Chooser
 User Themes
 Dynamic Wallpapers
+Night light slider
