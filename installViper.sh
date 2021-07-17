@@ -4,8 +4,8 @@
 
 URL_VIPER4LINUX="https://github.com/ThePBone/PPA-Repository/raw/master/viper4linux-gui_2.2-43.deb"
 
-URL_VIPER4LINUX_REPO="https://github.com/noahbliss/Viper4Linux.git"
-URL_GST_REPO="https://github.com/noahbliss/gst-plugin-viperfx"
+URL_VIPER4LINUX_REPO="https://github.com/Audio4Linux/Viper4Linux.git"
+URL_GST_REPO="https://github.com/Audio4Linux/gst-plugin-viperfx"
 URL_VIPERFX_CORE_BINARY_REPO="https://github.com/vipersaudio/viperfx_core_binary.git"
 
 
