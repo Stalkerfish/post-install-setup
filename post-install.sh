@@ -13,7 +13,7 @@ URL_APPIMAGELAUNCHER="https://github.com/TheAssassin/AppImageLauncher/releases/d
 URL_YOUTUBE_MUSIC="https://github.com/th-ch/youtube-music/releases/download/v1.12.1/youtube-music_1.12.1_amd64.deb"
 
 
-DIRETORIO_DOWNLOADS="$HOME/Downloads/pacotes deb"
+DIRETORIO_DOWNLOADS="~/Downloads/pacotes deb"
 
 PROGRAMAS_PARA_INSTALAR=(
   arduino
