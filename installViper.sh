@@ -72,8 +72,8 @@ sudo dpkg -i viper4linux-gui_2.2-43.deb
 
 sudo apt install qtbase5-dev libgstreamer-plugins-bad1.0-dev libgstreamer-opencv1.0-0 libgstreamer-plugins-good1.0-dev gir1.2-gst-plugins-bad-1.0 libopencv-dev libglu1-mesa-dev libqt5concurrent5 libqt5sql5 libqt5test5 libvulkan-dev libxext-dev qt5-qmake qtbase5-dev-tools qtchooser libqt5opengl5-dev -y
 
-sudo apt --fix-broken install
+sudo apt --fix-broken install -y
 
 sudo rm -r gst-plugin-viperfx Viper4Linux viperfx_core_binary
 
-echo "Viper4Linux was installed succesfully!
+echo "Viper4Linux was installed succesfully!"
