@@ -11,8 +11,8 @@ URL_VIPERFX_CORE_BINARY_REPO="https://github.com/vipersaudio/viperfx_core_binary
 
 
 PROGRAMAS_PARA_INSTALAR=(
-  build-essential
   cmake
+  build-essential
   git
   libgstreamer1.0-dev
   libgstreamer-plugins-base1.0-dev
@@ -78,13 +78,13 @@ cd ~
 cd Viper4Linux-GUI
 qmake V4L_Frontend.pro
 make
-./V4L_Frontend
 
 sudo cp V4L_Frontend /usr/local/bin/viper-gui
 sudo chmod 755 /usr/local/bin/viper-gui
 
-sudo su
-sudo cat <<EOT >> /usr/share/applications/viper-gui.desktop
+echo "Copy this and paste at the prompt, and then type exit: 
+
+cat <<EOT >> /usr/share/applications/viper-gui.desktop
 [Desktop Entry]
 Name=Viper4Linux
 GenericName=Equalizer
@@ -95,8 +95,9 @@ Exec=viper-gui
 StartupNotify=false
 Terminal=false
 Type=Application
-EOT
-exit
+EOT"
+
+sudo su
 
 sudo wget -O /usr/share/pixmaps/viper-gui.png $URL_VIPER4LINUX_PNG -q --show-progress
 
