@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # ----------------------------- VARIÁVEIS ----------------------------- #
 
+URL_VIPER4LINUX_PNG="https://raw.githubusercontent.com/Audio4Linux/Viper4Linux-GUI/master/viper.png"
+
 
 URL_VIPER4LINUX_REPO="https://github.com/Audio4Linux/Viper4Linux.git"
 URL_VIPER4LINUX_GUI_REPO="https://github.com/Audio4Linux/Viper4Linux-GUI"
@@ -43,7 +45,7 @@ cd ~
 git clone "$URL_VIPER4LINUX_REPO"
 git clone "$URL_GST_REPO"
 git clone "$URL_VIPERFX_CORE_BINARY_REPO"
-
+git clone "$URL_VIPER4LINUX_GUI_REPO"
 
 # ----------------------------- EXECUÇÃO ----------------------------- #
 
@@ -96,7 +98,7 @@ Type=Application
 EOT
 exit
 
-sudo wget -O /usr/share/pixmaps/viper-gui.png https://raw.githubusercontent.com/Audio4Linux/Viper4Linux-GUI/master/viper.png -q --show-progress
+sudo wget -O /usr/share/pixmaps/viper-gui.png $URL_VIPER4LINUX_PNG -q --show-progress
 
 cd ~
 sudo rm -r gst-plugin-viperfx Viper4Linux viperfx_core_binary Viper4Linux-GUI
