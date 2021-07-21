@@ -4,8 +4,6 @@ PPA_LUTRIS="ppa:lutris-team/lutris"
 PPA_ULAUNCHER="ppa:agornostal/ulauncher"
 
 
-URL_WINE_KEY="https://dl.winehq.org/wine-builds/winehq.key"
-URL_PPA_WINE="https://dl.winehq.org/wine-builds/ubuntu/"
 URL_4K_VIDEO_DOWNLOADER="https://dl.4kdownload.com/app/4kvideodownloader_4.9.2-1_amd64.deb"
 URL_GITHUB_DESKTOP="https://github.com/shiftkey/desktop/releases/download/release-2.9.0-linux3/GitHubDesktop-linux-2.9.0-linux3.deb"
 URL_WEB_TORRENT_DESKTOP="https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_amd64.deb"
@@ -19,10 +17,12 @@ PROGRAMAS_PARA_INSTALAR=(
   arduino
   gnome-tweak-tool
   flatpak
+  gnome-software-plugin-flatpak
   simulide
   extensions
   dconf-editor
   grub-customizer
+  gparted
   gnome-clocks
   gnome-weather
   plank
@@ -37,6 +37,7 @@ PROGRAMAS_PARA_INSTALAR=(
   steam-devices
   steam:i386
   lutris
+  playonlinux
   libvulkan1
   libvulkan1:i386
   libgnutls30:i386
@@ -65,9 +66,7 @@ sudo apt update -y
 ## Adicionando repositórios de terceiros (Lutris, Wine e Viper)##
 sudo add-apt-repository "$PPA_LUTRIS" -y
 sudo add-apt-repository "$PPA_ULAUNCHER" -y
-wget -nc "$URL_WINE_KEY"
-sudo apt-key add winehq.key
-sudo apt-add-repository "deb $URL_PPA_WINE focal main"
+
 # ---------------------------------------------------------------------- #
 
 # ----------------------------- EXECUÇÃO ----------------------------- #
@@ -93,10 +92,10 @@ for nome_do_programa in ${PROGRAMAS_PARA_INSTALAR[@]}; do
   fi
 done
 
-sudo apt install --install-recommends winehq-stable wine-stable wine-stable-i386 wine-stable-amd64 -y
 
 ## Instalando pacotes Flatpak ##
-flatpak install flathub com.rafaelmardojai.Blanket -y
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install flathub com.rafaelmardojai.Blanket -y
 
 ## Instalando pacotes Snap ##
 sudo snap install discord
@@ -108,7 +107,7 @@ sudo snap install code --classic
 # ----------------------------- PÓS-INSTALAÇÃO ----------------------------- #
 ## Finalização, atualização e limpeza##
 sudo apt update && sudo apt dist-upgrade -y
-flatpak update
+sudo flatpak update
 sudo apt autoclean
 sudo apt autoremove -y
 # ---------------------------------------------------------------------- #
