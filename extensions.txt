@@ -1,9 +1,0 @@
-ArcMenu
-Custom Hot Corners
-Dash to Panel
-GameMode
-GSConnect
-Sound Input & Output Device Chooser
-User Themes
-Dynamic Wallpapers
-Night light slider
