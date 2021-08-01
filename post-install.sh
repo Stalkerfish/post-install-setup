@@ -110,6 +110,18 @@ sudo snap install discord
 sudo snap install whatsapp-for-linux
 sudo snap install code --classic
 
+
+## Installing Dynamic Wallpapers
+
+while true; do
+    read -p "Do you wish to install this program?" yn
+    case $yn in
+        [Yy]* ) sudo rm -r /usr/share/backgrounds/Dynamic_Wallpapers; cd ~ && git clone git clone https://github.com/saint-13/Linux_Dynamic_Wallpapers.git; cd Linux_Dynamic_Wallpapers; sudo bash ./install.sh; echo "installed! use some tool to change the wallpaper"; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 # ---------------------------------------------------------------------- #
 
 # ----------------------------- PÓS-INSTALAÇÃO ----------------------------- #
