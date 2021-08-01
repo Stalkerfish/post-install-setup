@@ -10,6 +10,7 @@ URL_WEB_TORRENT_DESKTOP="https://github.com/webtorrent/webtorrent-desktop/releas
 URL_APPIMAGELAUNCHER="https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb"
 URL_YOUTUBE_MUSIC="https://github.com/th-ch/youtube-music/releases/download/v1.12.1/youtube-music_1.12.1_amd64.deb"
 
+DYNAMIC_WALLPAPERS_REPO="https://github.com/saint-13/Linux_Dynamic_Wallpapers.git"
 
 DIRETORIO_DOWNLOADS="~/Downloads/pacotes deb"
 
@@ -116,7 +117,7 @@ sudo snap install code --classic
 while true; do
     read -p "Do you wish to install this program?" yn
     case $yn in
-        [Yy]* ) sudo rm -r /usr/share/backgrounds/Dynamic_Wallpapers; cd ~ && git clone git clone https://github.com/saint-13/Linux_Dynamic_Wallpapers.git; cd Linux_Dynamic_Wallpapers; sudo bash ./install.sh; echo "installed! use some tool to change the wallpaper"; break;;
+        [Yy]* ) sudo rm -r /usr/share/backgrounds/Dynamic_Wallpapers; cd ~ && git clone $DYNAMIC_WALLPAPERS_REPO; cd Linux_Dynamic_Wallpapers; sudo bash ./install.sh; echo "installed! use some tool to change the wallpaper"; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
