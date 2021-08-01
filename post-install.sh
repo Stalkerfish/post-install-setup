@@ -10,7 +10,10 @@ URL_WEB_TORRENT_DESKTOP="https://github.com/webtorrent/webtorrent-desktop/releas
 URL_APPIMAGELAUNCHER="https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb"
 URL_YOUTUBE_MUSIC="https://github.com/th-ch/youtube-music/releases/download/v1.12.1/youtube-music_1.12.1_amd64.deb"
 
+
 DYNAMIC_WALLPAPERS_REPO="https://github.com/saint-13/Linux_Dynamic_Wallpapers.git"
+EXTENSIONS_SCRIPT="https://raw.githubusercontent.com/cyfrost/install-gnome-extensions/master/install-gnome-extensions.sh"
+
 
 DIRETORIO_DOWNLOADS="~/Downloads/pacotes deb"
 
@@ -118,6 +121,17 @@ while true; do
     read -p "Do you wish to install this program?" yn
     case $yn in
         [Yy]* ) sudo rm -r /usr/share/backgrounds/Dynamic_Wallpapers; cd ~ && git clone $DYNAMIC_WALLPAPERS_REPO; cd Linux_Dynamic_Wallpapers; sudo bash ./install.sh; echo "installed! use some tool to change the wallpaper"; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+
+## Installing Gnome Extensions
+while true; do
+    read -p "Do you want to install the gnome extensions located inside 'links.txt'?" yn
+    case $yn in
+        [Yy]* ) cd ~; rm -f ./install-gnome-extensions.sh; wget -N -q "$EXTENSIONS_SCRIPT" -O ./install-gnome-extensions.sh && chmod +x install-gnome-extensions.sh && ./install-gnome-extensions.sh --enable --file links.txt; echo "extensions installed"; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
