@@ -22,6 +22,7 @@ PROGRAMAS_PARA_INSTALAR=(
   unzip
   rar
   unrar
+  gnome-shell-extension-tool
   gnome-tweak-tool
   flatpak
   gnome-software-plugin-flatpak
