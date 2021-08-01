@@ -15,6 +15,13 @@ DIRETORIO_DOWNLOADS="~/Downloads/pacotes deb"
 
 PROGRAMAS_PARA_INSTALAR=(
   arduino
+  curl
+  wget
+  jq
+  zip
+  unzip
+  rar
+  unrar
   gnome-tweak-tool
   flatpak
   gnome-software-plugin-flatpak
