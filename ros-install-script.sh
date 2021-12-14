@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Script de Instalação do ROS Melodic para sistemas Debian-based
+## Script de Instalação do ROS Melodic para sistemas Ubuntu-based
 ## Autor: Allison Silva (@Stalkerfish)
 ## Licença: GPL 3.0
 
@@ -11,9 +11,9 @@ sleep 5
 
 PROGRAMAS_PARA_INSTALAR=(
   curl
+  python-pip
   ros-melodic-desktop-full
   python-rosdep
-  python-rosdep2
   python-rosinstall
   python-rosinstall-generator
   python-wstool
@@ -51,6 +51,12 @@ done
 
 ## Resolvendo possíveis dependências quebradas
 sudo apt install -f
+
+##Atualizando o pip
+sudo pip install --upgrade setuptools
+
+## Instalando módulos python do ROS via pip
+sudo pip install -U rosdep rosinstall_generator vcstool rosinstall
 
 ## Configurando o Ambiente ROS no computador
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
