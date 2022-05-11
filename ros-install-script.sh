@@ -59,7 +59,7 @@ sudo pip install --upgrade setuptools
 sudo pip install -U rosdep rosinstall_generator vcstool rosinstall
 
 ## Configurando o Ambiente ROS no computador
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+echo -e "\nsource /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 ## Inicializando o rosdep
@@ -68,3 +68,5 @@ sudo rosdep init
 rosdep update
 
 echo "ROS Melodic foi instalado com sucesso"
+source ~/.bashrc
+reset
